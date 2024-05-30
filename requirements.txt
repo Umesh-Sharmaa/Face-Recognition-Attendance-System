@@ -1,6 +1,6 @@
-cv2
+opencv-python
 Flask
 numpy
 pandas
 joblib
-sklearn
+scikit-learn
