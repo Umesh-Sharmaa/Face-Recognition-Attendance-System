@@ -111,7 +111,7 @@ def start():
         return render_template('home.html', names=names, rolls=rolls, times=times, l=l, dte=dte, totalreg=totalreg(), datetoday2=datetoday2, mess='There is no trained model in the static folder. Please add a new face to continue.')
 
     ret = True
-    cap = cv2.VideoCapture(-1)
+    cap = cv2.VideoCapture(0)
     while ret:
         ret, frame = cap.read()
         if len(extract_faces(frame)) > 0:
@@ -145,7 +145,7 @@ def add():
     if not os.path.isdir(userimagefolder):
         os.makedirs(userimagefolder)
     i, j = 0, 0
-    cap = cv2.VideoCapture(-1)
+    cap = cv2.VideoCapture(0)
     while 1:
         _, frame = cap.read()
         faces = extract_faces(frame)
